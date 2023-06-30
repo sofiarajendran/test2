@@ -33,7 +33,7 @@ jobs:
     - name: Test with python      
       run: |
         
-        echo " divition.."
+        echo " division.."
         python div.py
         echo " mutiplication.."
         python mul.py
