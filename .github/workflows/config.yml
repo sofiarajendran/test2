@@ -1,0 +1,53 @@
+name: Python test2
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
+jobs:
+  usingUbuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"   
+    - name: Test with python      
+      run: |
+        python div.py
+        echo "welcome all"
+
+  usingWindows:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"   
+    - name: Test with python      
+      run: |
+        
+        echo " divition.."
+        python div.py
+        echo " mutiplication.."
+        python mul.py
+
+  usingMacOS:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"   
+    - name: Test with python      
+      run: |
+        python div.py
+        echo "welcome all"
